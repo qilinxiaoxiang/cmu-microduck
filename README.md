@@ -1,6 +1,6 @@
 # CMU MicroDuck
 
-The first hand-built [MicroDuck](https://github.com/pollen-robotics/microduck) at Carnegie Mellon: a 15-servo walking duck with a head that senses touch, which the official robot does not. Built at the [CMU Robotics Club](https://roboticsclub.org) between 2026-09-30 and 2026-10-23 after Pollen Robotics' open-source design and [AI-FanGe's build tutorial](https://github.com/AI-FanGe/Microduck-build-tutorial). This repository holds everything needed to reproduce the robot exactly as it stood on 2026-10-23, including the software that stands and walks it: a 3D printer, the parts in `BOM.md` and a Mac are enough.
+The first hand-built [MicroDuck](https://github.com/pollen-robotics/microduck) at Carnegie Mellon: a 15-DoF walking duck with a head that senses touch, which the official robot does not. Built at the [CMU RoboClub](https://roboticsclub.org) between 2026-09-30 and 2026-10-23 after Pollen Robotics' open-source design and [AI-FanGe's build tutorial](https://github.com/AI-FanGe/Microduck-build-tutorial). This repository holds everything needed to reproduce the robot exactly as it stood on 2026-10-23, including the software that stands and walks it: a 3D printer, the parts in `BOM.md` and a Mac are enough.
 
 ![The CMU MicroDuck standing on 2026-10-23](docs/img/microduck-2026-10-23.jpg)
 
@@ -56,4 +56,4 @@ Our files (documents, scripts, firmware changes, our printed parts) are under th
 
 ## Acknowledgements
 
-Pollen Robotics for the MicroDuck design, the training environment, the simulator and the policies. AI-FanGe for the Microduck-build-tutorial (MIT) and the Raspberry Pi runtime this build started from. The CMU Robotics Club for the printers, tools and parts drawers.
+Pollen Robotics for the MicroDuck design, the training environment, the simulator and the policies. AI-FanGe for the Microduck-build-tutorial (MIT) and the Raspberry Pi runtime this build started from. The CMU RoboClub for the printers, tools and parts drawers.

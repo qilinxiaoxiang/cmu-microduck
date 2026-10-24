@@ -25,7 +25,7 @@ ROOT = HERE.parent
 SECTIONS = [
     ('in use', 'Bought or supplied for this robot and on it now'),
     ('battery route', 'Battery route (D-010): bought, backpack being built, not yet on the robot'),
-    ('club', 'From the CMU Robotics Club drawers (not bought; club supply)'),
+    ('club', 'From the CMU RoboClub drawers (not bought; club supply)'),
     ('tools', 'Tools and bench equipment (borrowed, not bought)'),
     ('replaced', 'Bought earlier, replaced before the foundation'),
     ('not used', 'Bought or supplied earlier, not on the foundation robot'),
@@ -102,7 +102,7 @@ def main() -> None:
          'October 2026) and `0-procurement/foundation-additions.json` for the parts bought after those records. '
          'Prices are what the records hold, not current quotes. Order numbers and receipts are not published. '
          'The sourcing policy of the project is kept: a part on hold or marked club supply was not bought, and this '
-         'list does not ask you to buy it either; the CMU Robotics Club drawers supplied screws, wire and consumables.', '',
+         'list does not ask you to buy it either; the CMU RoboClub drawers supplied screws, wire and consumables.', '',
          'The role text of the club-drawer and tool rows is the September 2026 record and some of it describes the harness of that '
          'time (12 V, SMPS2DXL, Raspberry Pi); the part and quantity columns are what the robot uses. Printed parts are in '
          '`1-printing/`. Servo count, roles and IDs are in `2-servos-openrb/`.', '']

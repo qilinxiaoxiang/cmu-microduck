@@ -14,7 +14,7 @@ The first hand-built [MicroDuck](https://github.com/pollen-robotics/microduck) a
 
 **[4. Power](4-power/)**: route A, in daily use: a 20 V USB-C PD source (a 20 V 5 A charger or a Xiaomi 212W power bank) through an Adafruit 5991 decoy into two XL4015 converters, 7.0 V to the servos and 5 V to the A7Z. Route B, designed and bought, backpack being built, not yet installed: a Tattu 2S 650 mAh LiPo straight to the servos and a DFR1202 making 5 V, swapped in with two plugs.
 
-**[5. Assembly](5-assembly/)**: the step-by-step build guide (11 chapters, 82 steps, a 3D view per step) and the bring-up pages for the head wiring, antenna, touch pads and battery wiring, all self-contained HTML under [`docs/`](docs/index.html).
+**[5. Assembly](5-assembly/)**: the step-by-step build guide (11 chapters, 82 steps, a 3D view per step) and the bring-up pages for the head wiring, antenna, touch pads and battery wiring, all self-contained HTML under [`docs/`](docs/index.html), served at https://qilinxiaoxiang.github.io/cmu-microduck/.
 
 **[6. Run](6-run/)**: the runtime (`walk_wired.py` and its closure) that reads servos and IMU, runs Pollen's 61-input ONNX policies and writes goals at 50 Hz, with the heading hold, the graded hold from the touch pads, the quack, the jaw, and the safety guards; a fetch script for Pollen's policy files with their hashes; and the first-run checklist.
 
@@ -31,7 +31,7 @@ The A7Z overheats in the closed head: 85 C after five minutes, both CPU clusters
 ## How to reproduce it
 
 1. Buy the parts in `BOM.md`; the two ROBOTIS OMX-AI kits supply the servos, the OpenRB and the XL4015 modules.
-2. Print `1-printing/` (the plates from the release assets, or the STLs).
+2. Print `1-printing/` (the sliced plates from the [foundation-2026-10-23 release](https://github.com/qilinxiaoxiang/cmu-microduck/releases/tag/foundation-2026-10-23), or the STLs).
 3. Set the servos up and flash the OpenRB as in `2-servos-openrb/`.
 4. Write the A7Z card, add the overlays and wire the head as in `3-brain-and-senses/` and `docs/A7Z-PINS.html`.
 5. Build the power route A converter box as in `4-power/`.

@@ -1,0 +1,58 @@
+// Radxa Cubie A7Z: TWI0 on header pins 29 (PB2, SCL) and 31 (PB3, SDA) for the head touch board.
+//
+// The XIAO ESP32-S3 in the head answers as I2C slave 0x2A on these two pins (blue SCL, green SDA).
+// The A7Z device tree leaves TWI0 (2510000.twi) disabled, and its only TWI0 pin group is PD22/PD23,
+// so without this overlay the pins stay plain GPIO and the touch block has to be bit-banged from
+// user space (tens of ms of CPU per read). The A733 pinctrl lists twi0 as a function of PB2/PB3
+// (debugfs pinmux-functions, 2026-10-20) and Radxa's pin table names them TWI0-SCK/TWI0-SDA.
+// Pin groups get their own names (duck-twi0-pb@0/1) next to the base tree's twi0@0/1 (PD22/PD23).
+// Engine mode (twi_drv_used = 0) from the start: drv mode wedged TWI7 on the same BSP driver
+// (duck-twi7-engine.dts). 100 kHz, the XIAO's slave clock; internal pull-ups on both ends.
+//
+// Install on the A7Z:
+//   dtc -@ -I dts -O dtb -o /tmp/zz-duck-twi0-touch.dtbo duck-twi0-touch.dts
+//   sudo install -m 644 /tmp/zz-duck-twi0-touch.dtbo /boot/dtbo/
+//   sudo u-boot-update      (fdtoverlays now also lists .../zz-duck-twi0-touch.dtbo)
+//   sudo reboot
+// Check: ls /sys/bus/i2c/devices/*/of_node -l | grep 2510000 names the bus; i2cdetect -y -r <bus> shows 2a.
+// If u-boot cannot apply it, it prints "Failed to apply overlay ..., skipping" and boots without it.
+// Undo: sudo rm /boot/dtbo/zz-duck-twi0-touch.dtbo, sudo u-boot-update, reboot.
+/dts-v1/;
+/plugin/;
+/ {
+	metadata {
+		title = "MicroDuck: TWI0 on pins 29/31 (touch board)";
+		compatible = "radxa,cubie-a7z";
+		category = "misc";
+		exclusive = "twi0", "PB2", "PB3";
+		description = "Enable TWI0 on PB2 (pin 29, SCL) and PB3 (pin 31, SDA) in engine mode for the head touch board (XIAO at 0x2A). Added 2026-10-21.";
+	};
+
+	fragment@0 {
+		target = <&pio>;
+		__overlay__ {
+			duck_twi0_pb_default: duck-twi0-pb@0 {
+				pins = "PB2", "PB3";
+				function = "twi0";
+				drive-strength = <10>;
+				bias-pull-up;
+			};
+			duck_twi0_pb_sleep: duck-twi0-pb@1 {
+				pins = "PB2", "PB3";
+				function = "gpio_in";
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <&twi0>;
+		__overlay__ {
+			clock-frequency = <100000>;
+			pinctrl-0 = <&duck_twi0_pb_default>;
+			pinctrl-1 = <&duck_twi0_pb_sleep>;
+			pinctrl-names = "default", "sleep";
+			twi_drv_used = <0>;
+			status = "okay";
+		};
+	};
+};

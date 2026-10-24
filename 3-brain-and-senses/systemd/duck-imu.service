@@ -1,0 +1,15 @@
+# BNO085 -> J12 UART stream for walk_wired.py; restarts by itself after a Pi reboot or a crash.
+# The reader scans every i2c bus, so the bus number may move between boots (bus 3 before, bus 1 after the 2026-10-15 reboot).
+[Unit]
+Description=MicroDuck IMU UART stream
+After=local-fs.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/duck
+ExecStart=/home/pi/duck-venv/bin/python pi_imu_uart.py
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=MicroDuck A7Z flight recorder (kernel log + 5 Hz system snapshot, fsynced; ~/duck-logs/blackbox)
+After=local-fs.target
+DefaultDependencies=no
+StartLimitIntervalSec=0
+
+[Service]
+# RCU stall warning after 5 s instead of 21 s, so it prints before the watchdog resets the board (absent knob: skipped)
+ExecStartPre=-/bin/sh -c 'echo 5 > /sys/module/rcupdate/parameters/rcu_cpu_stall_timeout'
+ExecStart=/usr/bin/python3 /home/radxa/duck/blackbox.py
+Nice=-5
+LimitMEMLOCK=infinity
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,1604 @@
+{
+ "foundation": "2026-10-23",
+ "toolsNotIncluded": [
+  {
+   "key": "hotglue_mold_left",
+   "name": "Left foot sole mold (tool)",
+   "version": "V1.21",
+   "note": "sole mold for the hot-glue route dropped on 2026-10-19; STL not included, the soles are cut from a bicycle inner tube"
+  },
+  {
+   "key": "hotglue_mold_right",
+   "name": "Right foot sole mold (tool)",
+   "version": "V1.21",
+   "note": "sole mold for the hot-glue route dropped on 2026-10-19; STL not included, the soles are cut from a bicycle inner tube"
+  }
+ ],
+ "releasesApplied": [
+  "V1.6",
+  "V1.7",
+  "V1.8",
+  "V1.9",
+  "V1.17",
+  "V1.20",
+  "V1.21",
+  "V1.22",
+  "V1.24",
+  "V1.25",
+  "V1.28",
+  "V1.31"
+ ],
+ "ourParts": [
+  {
+   "key": "ankle_sleeve_left",
+   "name": "Left ankle sleeve, 10.4 mm bore",
+   "version": "V1.22",
+   "status": "printed",
+   "statusSource": "manifest-V1.24.json: \"V1.22 is printed (the builder 2026-10-20)\"",
+   "color": "Black",
+   "quantity": 1,
+   "sourceStl": "build-pack-20260913/redesign-20260913/ankle-redesign-20261007/STL/left-sleeve-local.stl",
+   "sourceSha256": "cece343cad5617c33fdc7c4062b3fc02231729749cdcb2c75c4003e196067e0e",
+   "printStl": "build-pack-20260913/redesign-20260913/ankle-redesign-20261007/STL/left-sleeve-local.stl",
+   "sourceFrame": "ankle-redesign-20261007 local frame of the left ankle sleeve (mm; motor shaft = local z through the origin)",
+   "pose": "local -Z down (axial, 10/07 pose; +Z down is identical by symmetry): Axial, local -Z down, the 10/07 candidate pose (the mesh is exactly symmetric in z, so +Z down is the same print).",
+   "reason": "Replaces the printed community-62.stl (stock object 148, the left 9.65 mm ankle sleeve): bore 10.4 mm instead of 9.65 mm on the 10 mm link boss (the stock sleeve is a 14.96 mm3 press fit, ankle-split-check.json sleeveOnLinkBoss), OD 14.6 mm, 2.8 mm wide with 0.2 mm entry chamfers, so it slides on by hand and runs free.",
+   "file": "stl/our-parts/Black/ankle_sleeve_left.stl",
+   "fileSha256": "cece343cad5617c33fdc7c4062b3fc02231729749cdcb2c75c4003e196067e0e",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    14.6,
+    14.6,
+    2.8
+   ]
+  },
+  {
+   "key": "eye_trim",
+   "name": "Eye trim",
+   "version": "V1.8",
+   "status": "printed",
+   "statusSource": "manifest-V1.9.json: \"on top of the printed V1.8 set\"",
+   "color": "Black",
+   "quantity": 1,
+   "sourceStl": "guide/print/world/eye_trim.stl",
+   "sourceSha256": "2e016f19f4f0118f0a355076bc6d9de1770cd4d775502d43c95947c8b7652efa",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "V1.6 eye-trim print pose expressed in the robot frame: inverse of the V1.6 registration transformReleaseToWorld (interference-audit register_v16), dropped to the bed",
+   "reason": "V1.8 eye trim: as V1.6 plus two 1.7 mm pilots (x 81.3..87.0 at z 120.6 and 141.6) for the M2 x 8 camera screws.",
+   "file": "stl/our-parts/Black/eye_trim.stl",
+   "fileSha256": "87ba48b2763dda08fd91990695293784819d084ac8e97b152238036110e45e1d",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    30.0,
+    30.0,
+    9.4
+   ]
+  },
+  {
+   "key": "jaw_support_original",
+   "name": "Jaw support (open, original style)",
+   "version": "V1.6",
+   "status": "printed",
+   "statusSource": "the V1.7 and V1.8 release records build on \"the printed V1.6/V1.7 set\"",
+   "color": "Black",
+   "quantity": 1,
+   "sourceStl": "build-pack-20260913/redesign-20260913/printing/15-COMPLETE-INCREMENTAL-20261009/black-source-print/jaw_support_original-print.stl",
+   "sourceSha256": "df19145a1363ec1552cea0e8c81bc26173cd2742788b4409ef8189db0fe464e4",
+   "printStl": null,
+   "sourceFrame": null,
+   "pose": "",
+   "reason": "Restore original community24 jaw support, replacing the coaxial support actually supplied in the printed89-piece stock.",
+   "file": "stl/our-parts/Black/jaw_support_original.stl",
+   "fileSha256": "6e0ea397cafa8fcffb6dba96d36dd78dd1c0b1c834098416718b0e90feea44a9",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    54.2,
+    73.5,
+    18.8
+   ]
+  },
+  {
+   "key": "lower_right",
+   "name": "Right lower-leg link with the ankle sleeve printed on",
+   "version": "V1.28",
+   "status": "printed",
+   "statusSource": "FOUNDATION-20261023.md: \"the one-piece right lower-leg link (V1.28)\" is on the robot",
+   "color": "Black",
+   "quantity": 1,
+   "sourceStl": "guide/print/link-sleeve-20261022/STL/right-link-print.stl",
+   "sourceSha256": "0b78e7947001a829a6df586393cf7401ce5da0fdc596898eb90ec39a9f70e106",
+   "printStl": "guide/print/link-sleeve-20261022/STL/right-link-print.stl",
+   "sourceFrame": "10/1 print frame of the stock link",
+   "pose": "10/1 pose of the stock link, flat, 8.05 mm tall, 174.7 mm2 contact.",
+   "reason": "One-piece lower-leg link: the stock link with the V1.22 ankle sleeve (OD 14.6, 2.8 wide) printed on its 10 mm boss (the builder 2026-10-22); same seated contacts and assembly paths as link + sleeve (link-check.json).",
+   "file": "stl/our-parts/Black/lower_right.stl",
+   "fileSha256": "0b78e7947001a829a6df586393cf7401ce5da0fdc596898eb90ec39a9f70e106",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    20.0,
+    59.3,
+    8.0
+   ]
+  },
+  {
+   "key": "mouth_sliding_ring",
+   "name": "Jaw sliding ring",
+   "version": "V1.6",
+   "status": "printed",
+   "statusSource": "the V1.7 and V1.8 release records build on \"the printed V1.6/V1.7 set\"",
+   "color": "Black",
+   "quantity": 1,
+   "sourceStl": "build-pack-20260913/redesign-20260913/printing/15-COMPLETE-INCREMENTAL-20261009/black-source-print/mouth_sliding_ring-print.stl",
+   "sourceSha256": "c4f68684c38af64b0b0d719c3985abba647fbba1a1933bc09649cd864cdeac4b",
+   "printStl": null,
+   "sourceFrame": null,
+   "pose": "",
+   "reason": "Separate thin retaining ring used with restored original jaw support; no corresponding original89 stock part.",
+   "file": "stl/our-parts/Black/mouth_sliding_ring.stl",
+   "fileSha256": "61a6dd8b12a9f5d7d4f8608722ecf896d8c2d2d08e75b79f082049d7386e4ce1",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    16.4,
+    16.4,
+    2.4
+   ]
+  },
+  {
+   "key": "neck_pitch_integrated_1mm_seats",
+   "name": "Neck pitch bracket with integral 1 mm screw seats",
+   "version": "V1.6",
+   "status": "printed",
+   "statusSource": "the V1.7 and V1.8 release records build on \"the printed V1.6/V1.7 set\"",
+   "color": "Black",
+   "quantity": 1,
+   "sourceStl": "build-pack-20260913/redesign-20260913/printing/15-COMPLETE-INCREMENTAL-20261009/black-source-print/neck_pitch_integrated_1mm_seats-print.stl",
+   "sourceSha256": "f192148b56f5c262a6a55b4a0db183d6b72d007a9b7ff87c0256a1371e5c8355",
+   "printStl": null,
+   "sourceFrame": null,
+   "pose": "",
+   "reason": "User selected integral1mm screw-head seats for M2x6; replaces community28, not stock object36/community70.",
+   "file": "stl/our-parts/Black/neck_pitch_integrated_1mm_seats.stl",
+   "fileSha256": "e9b7b677965da84c229920387c4cdd35057f1b2c0cedd371a01f39aead939b45",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    35.0,
+    18.0,
+    27.7
+   ]
+  },
+  {
+   "key": "neck_pitch_ring",
+   "name": "Head-pitch sliding ring",
+   "version": "V1.8",
+   "status": "printed",
+   "statusSource": "manifest-V1.9.json: \"on top of the printed V1.8 set\"",
+   "color": "Black",
+   "quantity": 1,
+   "sourceStl": "guide/print/world/neck_pitch_ring.stl",
+   "sourceSha256": "313b05ae6e8c07f214805e154a1de4937690ac758bc9a432dec24ea0fb878f3f",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "Flat, axis vertical, as the 10/1 4 mm ring (plate-05/17_community-102.stl).",
+   "reason": "Neck pitch ring lengthened from 4.0 to 4.9 mm.",
+   "file": "stl/our-parts/Black/neck_pitch_ring.stl",
+   "fileSha256": "ef3a2f9304289fe56a3b5eaf0d0a784b31fe6a3e4a85cbcbb4fc4a11c80c93eb",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    22.0,
+    22.0,
+    4.9
+   ]
+  },
+  {
+   "key": "neck_ring_shim_1mm",
+   "name": "Head-pitch ring shim, 1 mm (optional)",
+   "version": "V1.8",
+   "status": "printed",
+   "statusSource": "manifest-V1.9.json: \"on top of the printed V1.8 set\"",
+   "color": "Black",
+   "quantity": 1,
+   "sourceStl": "guide/print/neck-ring/shim_1mm.stl",
+   "sourceSha256": "b2e6b4d13f548bc235ac61a087227db6322879993c817fff5be643da8eb123e0",
+   "printStl": null,
+   "sourceFrame": "print frame (mm, axis z, lower face on z 0)",
+   "pose": "Flat, axis vertical, like the ring.",
+   "reason": "Optional 1 mm shim with the ring bore (16.4 mm) and outside (22 mm).",
+   "file": "stl/our-parts/Black/neck_ring_shim_1mm.stl",
+   "fileSha256": "adb2fa489209b14e0ef709af2f87f10b992b69e8e3cd8cce599d6e6e6c1ced4a",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    22.0,
+    22.0,
+    1.0
+   ]
+  },
+  {
+   "key": "neck_ring_shim_2mm",
+   "name": "Head-pitch ring shim, 2 mm (optional)",
+   "version": "V1.8",
+   "status": "printed",
+   "statusSource": "manifest-V1.9.json: \"on top of the printed V1.8 set\"",
+   "color": "Black",
+   "quantity": 1,
+   "sourceStl": "guide/print/neck-ring/shim_2mm.stl",
+   "sourceSha256": "1038ce2f5cf27c03c00a16b0371e809d4b3cbd8f478db2cab1c12558aea6d69f",
+   "printStl": null,
+   "sourceFrame": "print frame (mm, axis z, lower face on z 0)",
+   "pose": "Flat, axis vertical, like the ring.",
+   "reason": "Optional 2 mm shim with the ring bore (16.4 mm) and outside (22 mm).",
+   "file": "stl/our-parts/Black/neck_ring_shim_2mm.stl",
+   "fileSha256": "380223eb89e56ede84888cfd77eb4f955c6d42e9b9adb71894f901b65cf0b704",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    22.0,
+    22.0,
+    2.0
+   ]
+  },
+  {
+   "key": "ankle_inner_left",
+   "name": "Left ankle inner half, on the sleeve (round bore)",
+   "version": "V1.25",
+   "status": "released 2026-10-20; the robot carries the V1.24 halves",
+   "statusSource": "FOUNDATION-20261023.md lists V1.22/V1.24/V1.25 for the ankle; no release record says V1.25 was printed",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/ankle-halves-20261020/STL/left-inner-local.stl",
+   "sourceSha256": "8e17b0fda506233ab198867a195efd224d7ded440491d6dcec00964365bf8451",
+   "printStl": "guide/print/ankle-halves-20261020/STL/left-inner-local.stl",
+   "sourceFrame": "ankle-halves-20261020 local frame of the left ankle inner half (mm; motor shaft = local z, up = local y)",
+   "pose": "local +x down (toe end on the bed, shaft flat, round bore): the builder 2026-10-20 on the printed V1.24 teardrop: the d15 pocket and the d14 lip bore stay round and support may stand in the hole.",
+   "reason": "New part, with ankle_outer_left replacing the printed community-66.stl (stock object 20); it also replaces the V1.22 ankle side.",
+   "file": "stl/our-parts/Orange/ankle_inner_left.stl",
+   "fileSha256": "8e17b0fda506233ab198867a195efd224d7ded440491d6dcec00964365bf8451",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    36.5,
+    25.5,
+    19.5
+   ]
+  },
+  {
+   "key": "ankle_inner_right",
+   "name": "Right ankle inner half, on the sleeve (round bore)",
+   "version": "V1.25",
+   "status": "released 2026-10-20; the robot carries the V1.24 halves",
+   "statusSource": "FOUNDATION-20261023.md lists V1.22/V1.24/V1.25 for the ankle; no release record says V1.25 was printed",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/ankle-halves-20261020/STL/right-inner-local.stl",
+   "sourceSha256": "ce63dc5ca9f13bb6c746a7f9ff5aa7ca9a0d1914355d6db86b57f48bd98bf0b1",
+   "printStl": "guide/print/ankle-halves-20261020/STL/right-inner-local.stl",
+   "sourceFrame": "ankle-halves-20261020 local frame of the right ankle inner half (mm; motor shaft = local z, up = local y)",
+   "pose": "local -x down (toe end on the bed; the right frame mirrors x): the builder 2026-10-20 on the printed V1.24 teardrop: the d15 pocket and the d14 lip bore stay round and support may stand in the hole.",
+   "reason": "New part, with ankle_outer_right replacing the printed community-64.stl (stock object 22); it also replaces the V1.22 ankle side.",
+   "file": "stl/our-parts/Orange/ankle_inner_right.stl",
+   "fileSha256": "ce63dc5ca9f13bb6c746a7f9ff5aa7ca9a0d1914355d6db86b57f48bd98bf0b1",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    36.5,
+    25.5,
+    19.5
+   ]
+  },
+  {
+   "key": "ankle_outer_left",
+   "name": "Left ankle outer half, on the servo horn",
+   "version": "V1.25",
+   "status": "released 2026-10-20; the robot carries the V1.24 halves",
+   "statusSource": "FOUNDATION-20261023.md lists V1.22/V1.24/V1.25 for the ankle; no release record says V1.25 was printed",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/ankle-halves-20261020/STL/left-outer-local.stl",
+   "sourceSha256": "642ba2d62c49be5207df55368de20adf23224ca8b6f3c793c16523b712cac8e8",
+   "printStl": "guide/print/ankle-halves-20261020/STL/left-outer-local.stl",
+   "sourceFrame": "ankle-halves-20261020 local frame of the left ankle outer half (mm; motor shaft = local z, up = local y)",
+   "pose": "local +x down (gusset end face on the bed): The gusset end face on the bed, as the V1.22 base and the 10/07 candidate: the motor mating face, the four output seats and the cut face stand vertical.",
+   "reason": "Replaces the printed community-66.stl (stock object 20, the left one-piece ankle bracket) together with ankle_inner_left; it also replaces the V1.22 ankle base.",
+   "file": "stl/our-parts/Orange/ankle_outer_left.stl",
+   "fileSha256": "642ba2d62c49be5207df55368de20adf23224ca8b6f3c793c16523b712cac8e8",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    36.5,
+    25.5,
+    19.8
+   ]
+  },
+  {
+   "key": "ankle_outer_right",
+   "name": "Right ankle outer half, on the servo horn",
+   "version": "V1.25",
+   "status": "released 2026-10-20; the robot carries the V1.24 halves",
+   "statusSource": "FOUNDATION-20261023.md lists V1.22/V1.24/V1.25 for the ankle; no release record says V1.25 was printed",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/ankle-halves-20261020/STL/right-outer-local.stl",
+   "sourceSha256": "a1e9f91fd25d766f41206ca1c2886f853e76f8bda0f2ac96b2bac64bd0842af4",
+   "printStl": "guide/print/ankle-halves-20261020/STL/right-outer-local.stl",
+   "sourceFrame": "ankle-halves-20261020 local frame of the right ankle outer half (mm; motor shaft = local z, up = local y)",
+   "pose": "local -x down (gusset end face on the bed; the right frame mirrors x): The gusset end face on the bed, as the V1.22 base and the 10/07 candidate: the motor mating face, the four output seats and the cut face stand vertical.",
+   "reason": "Replaces the printed community-64.stl (stock object 22, the right one-piece ankle bracket) together with ankle_inner_right; it also replaces the V1.22 ankle base.",
+   "file": "stl/our-parts/Orange/ankle_outer_right.stl",
+   "fileSha256": "a1e9f91fd25d766f41206ca1c2886f853e76f8bda0f2ac96b2bac64bd0842af4",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    36.5,
+    25.5,
+    19.8
+   ]
+  },
+  {
+   "key": "battery_backpack_cap",
+   "name": "Battery backpack cap, 3 mm screw floors",
+   "version": "V1.20",
+   "status": "printed",
+   "statusSource": "manifest-V1.21.json: \"V1.20 is printed (the builder 2026-10-19)\"",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/back-plate/battery-backpack-20261015/battery_backpack_cap-world.stl",
+   "sourceSha256": "0ccf28073cb54986fc25860e8d55550e2602f7d37ece24d051d2670a0171760d",
+   "printStl": "guide/print/back-plate/battery-backpack-20261015/battery_backpack_cap-print.stl",
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "back-plate/battery-backpack-20261015/bp_checks.json printPoses.cap: outer rear face (robot x -73.75) on the bed, x' = y, y' = z, z' = x as rear_lid; 2301.9 mm2 bed contact, 7.4 mm tall.",
+   "reason": "V1.20: the unprinted V1.19 battery backpack cap moved 0.7 mm back with the deeper V1.20 frame.",
+   "file": "stl/our-parts/Orange/battery_backpack_cap.stl",
+   "fileSha256": "3346bdf372e00a869ce9b77c592fe1d4e3d3eb727ffd67862afedd52151acb70",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    64.1,
+    77.0,
+    7.4
+   ]
+  },
+  {
+   "key": "battery_backpack_frame",
+   "name": "Battery backpack frame (DFR1202 slot widened in V1.31)",
+   "version": "V1.31",
+   "status": "released 2026-10-23, not printed",
+   "statusSource": "FOUNDATION-20261023.md: \"the battery backpack frame (V1.20, being replaced by V1.31)\"",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/back-plate/battery-backpack-20261015/battery_backpack_frame-world.stl",
+   "sourceSha256": "21931cdb57d5a0a6056ae7d77b3a1be1ea3cb34c44510555193b7101df749540",
+   "printStl": "guide/print/back-plate/battery-backpack-20261015/battery_backpack_frame-print.stl",
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "back-plate/battery-backpack-20261015/bp_checks.json printPoses.frame: rim-down as rear_frame, the frame rim (robot x -66.35, the cap seam) on the bed, x' = y, y' = z, z' = x; 713.1 mm2 bed contact (the wall ring, the solid narrow-tier ...",
+   "reason": "V1.31: the V1.20 frame with a wider DFR1202 slot.",
+   "file": "stl/our-parts/Orange/battery_backpack_frame.stl",
+   "fileSha256": "4764606a5668ff6b502a02a45803f6d2a8922f299cddaf8160220f87ee2fa00d",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    64.1,
+    87.0,
+    22.1
+   ]
+  },
+  {
+   "key": "clip_bracket_v19",
+   "name": "Neck wire clip, bracket (printed, not fitted)",
+   "version": "V1.9",
+   "status": "printed",
+   "statusSource": "manifest-V1.17.json baseline: \"printed V1.8 set with the V1.9 Orange plate\"",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/ext-v19/clip_bracket_v19-world.stl",
+   "sourceSha256": "a2b796315cc039f49ff4c796624045aa23bfb8c6ac46c1fce4fb37a529a71015",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "ext-v19/manifest-ext-v19.json: tab seat face on the bed, screw hole vertical; 67.91 mm2 contact",
+   "reason": "New V1.9 part: neck bracket cable clip, a 2 mm tab under S11-horn-040 on the head-pitch axis with a 4.8 x 4.8 mm channel (2.4 mm slot), rounded mouth corners and 1.5 mm end chamfers.",
+   "file": "stl/our-parts/Orange/clip_bracket_v19.stl",
+   "fileSha256": "26eeca4db87229dc9cbd83494952254b3c70aa9a90c50df77301462f975fe39a",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    12.8,
+    6.4,
+    7.0
+   ]
+  },
+  {
+   "key": "clip_cap_a7z",
+   "name": "Cap wire clip with the micro HDMI notch (printed, not fitted)",
+   "version": "V1.17",
+   "status": "printed",
+   "statusSource": "manifest-V1.18.json: \"V1.17 is the printed baseline (the builder started printing it on 2026-10-15)\"",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/a7z-head/clip_cap_a7z-world.stl",
+   "sourceSha256": "ab50937dac7f6bf43bca5eb083d28a1369cedc7a97082f6abc8ddaa85d562d21",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "V1.9 cap clip pose, release-V1.9/manifest-V1.9.json clip_cap_v19.sourceToPrint (scripts/pose-sources-a7z.json): tab seat face on the bed, screw hole vertical; 25.1 mm2 true contact, 6.0 mm tall, tip angle 54.7 deg.",
+   "reason": "A7Z cap clip (a7z-head/build_a7z_head.py, checks.json clip): the V1.9 cap clip with a notch cut into its underside over the A7Z micro HDMI socket, which overhangs the board edge by 1.6 mm where the clip arm crossed it (0.6 mm clearance all round).",
+   "file": "stl/our-parts/Orange/clip_cap_a7z.stl",
+   "fileSha256": "531909bdab5b47c31461488f1d259429cee20a27a2ca06112a9f53d1c11b3aa5",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    13.3,
+    17.8,
+    6.0
+   ]
+  },
+  {
+   "key": "clip_head_v19",
+   "name": "Neck wire clip, head end (printed, not fitted)",
+   "version": "V1.9",
+   "status": "printed",
+   "statusSource": "manifest-V1.17.json baseline: \"printed V1.8 set with the V1.9 Orange plate\"",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/ext-v19/clip_head_v19-world.stl",
+   "sourceSha256": "a800af0d807386fddeade3623b976af9743010db7d85e61a7ea25f7b579edbff",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "ext-v19/manifest-ext-v19.json: tab seat face on the bed, screw hole vertical; 119.97 mm2 contact",
+   "reason": "New V1.9 part: head cable clip, a 2 mm tab under H-jaw_support-03 with a channel that takes the bundle down and out through a side window.",
+   "file": "stl/our-parts/Orange/clip_head_v19.stl",
+   "fileSha256": "590caacb96cd79e81493c29d58f9c5d8bb5fbf8d24f799befdaf36b9f381dac0",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    13.7,
+    15.1,
+    11.2
+   ]
+  },
+  {
+   "key": "clip_torso_v19",
+   "name": "Neck wire clip, torso end (printed, not fitted)",
+   "version": "V1.9",
+   "status": "printed",
+   "statusSource": "manifest-V1.17.json baseline: \"printed V1.8 set with the V1.9 Orange plate\"",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/ext-v19/clip_torso_v19-world.stl",
+   "sourceSha256": "910908747a32f32cf468eae1cd0d52b3c1e1bc68a088c0b76965f071207fa389",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "ext-v19/manifest-ext-v19.json: tab seat face on the bed, screw hole vertical; 60.26 mm2 contact",
+   "reason": "New V1.9 part: torso cable clip, a 2 mm tab under S12-horn-025 with a 4.8 x 4.8 mm channel (2.4 mm slot) for the 8-wire neck bundle.",
+   "file": "stl/our-parts/Orange/clip_torso_v19.stl",
+   "fileSha256": "1f16d613216cf03d2b20bd3baa1d87b7a9e14ba1d32e51fc243ddf1c446164fc",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    10.8,
+    10.3,
+    8.9
+   ]
+  },
+  {
+   "key": "head_cap",
+   "name": "head cap",
+   "version": "V1.8",
+   "status": "printed",
+   "statusSource": "manifest-V1.9.json: \"on top of the printed V1.8 set\"",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/world/head_cap.stl",
+   "sourceSha256": "88ecc42d1cbfe7f1622967fb61964c0def2b6b3bb93312e165b802d77c16e95a",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "V1.6/V1.7 cap flat pose expressed in the robot frame: worldToFlatPrint = sourceToPrint @ worldToStlFrame from candidates/head-cap-pi-shift/manifest.json (same 104.39 mm2 bed contact and bounds)",
+   "reason": "V1.8 head cap: the V1.7 cap (Pi seat 4.6 mm back, +y rail trimmed) with both Pi rails raised 1.0 mm so the plugged jumper housings clear the lower shell without a beak window, and the two unused rear roof bosses removed.",
+   "file": "stl/our-parts/Orange/head_cap.stl",
+   "fileSha256": "b967d05bf85ae0ad101af31c4e663ed0004877fd85f7dcc0ed2e505b7c8bb51a",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    126.5,
+    91.6,
+    47.1
+   ]
+  },
+  {
+   "key": "rear_frame",
+   "name": "Rear converter box frame (layout F)",
+   "version": "V1.17",
+   "status": "printed",
+   "statusSource": "manifest-V1.18.json: \"V1.17 is the printed baseline (the builder started printing it on 2026-10-15)\"",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/back-plate/layout-F/rear_frame-world.stl",
+   "sourceSha256": "2f1f81bf63216c1a279c4f1f071c2f79d1a2c49de7382b9e945cb2a753032d92",
+   "printStl": "guide/print/back-plate/layout-F/rear_frame-print.stl",
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "back-plate/layout-F/build.json printPoses.frame and back-plate/layout-F/rear_frame-print.stl: rim-down, the frame rim (robot x -59.1, the cap seam) on the bed, x' = y, y' = z, z' = x; 252.0 mm2 bed contact (the 1.2 mm wall ring alone on a ...",
+   "reason": "V1.16 rear converter box frame, layout F regenerated from build_f.py (back-plate/layout-F/README.md): the V1.11 frame with the two cap-screw ear bosses and their webs removed, the front passage P1 filled (solid front plate) and no tooth slots or hook notch (the builder 2026-10-15: the cap is held by screws only).",
+   "file": "stl/our-parts/Orange/rear_frame.stl",
+   "fileSha256": "b684a957a5510fcba5a3c290267a632e15bb1d90e98c0eda3621654a00ac5e22",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    64.1,
+    87.0,
+    21.6
+   ]
+  },
+  {
+   "key": "rear_lid",
+   "name": "Rear converter box cap, 3 mm screw floors",
+   "version": "V1.20",
+   "status": "printed",
+   "statusSource": "manifest-V1.21.json: \"V1.20 is printed (the builder 2026-10-19)\"",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/back-plate/layout-F/rear_lid-world.stl",
+   "sourceSha256": "ee096c39ac2da0eef539a8aa47b4c28a6f6b3d7ba9e450a02896be59fcc22a17",
+   "printStl": "guide/print/back-plate/layout-F/rear_lid-print.stl",
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "back-plate/layout-F/build.json printPoses.lid and back-plate/layout-F/rear_lid-print.stl: outer rear face (robot x -67.1) on the bed, x' = y, y' = z, z' = x; 2634.0 mm2 bed contact, 12.5 mm tall (open side up, no tongues).",
+   "reason": "V1.20: the V1.19 layout F cap, unprinted, carried unchanged.",
+   "file": "stl/our-parts/Orange/rear_lid.stl",
+   "fileSha256": "05fd5baad85660da01c9e3b60609bf571ee77c6b265f307f71f6cd137e1ba68d",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    64.1,
+    79.0,
+    14.5
+   ]
+  },
+  {
+   "key": "rear_pack",
+   "name": "Rear electronics pack (OpenRB-150 upright, BNO085 rib, shell seat bars)",
+   "version": "V1.9",
+   "status": "printed",
+   "statusSource": "manifest-V1.17.json baseline: \"printed V1.8 set with the V1.9 Orange plate\"",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/rear-pack-v19/rear_pack-world.stl",
+   "sourceSha256": "e2d58d22231e43690aa274925fc9c91146b4a7e7109247a269b6ffc72a9eba00",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "V1.8 rear_pack pose (release-V1.8/scripts/rows.json): upright as in the robot, floor (robot z -44) on the bed; 660.6 mm2 bed contact, rank 1 of 11 in rear-pack-v19/orientation-check.json.",
+   "reason": "V1.9 rear electronics pack: a BNO085 rib on the plate front face with two M2 x 4 pilots replaces the shelf and its zip-tie slots (the board is screwed on at the bench before pack-in); the T-head is grown 0.4 mm all round and two 3 mm shoulder bars behind the plate seat the printed V1.8 side shells (roof gap 0.15 mm left, 0.27 mm right instead of 0.55/0.71).",
+   "file": "stl/our-parts/Orange/rear_pack.stl",
+   "fileSha256": "09dad21e8cead197be99c125a05d3d0c97b4910dcf5eafeea1c83ecd10841331",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    32.0,
+    55.2,
+    83.2
+   ]
+  },
+  {
+   "key": "speaker_retainer_v19",
+   "name": "Speaker retainer frame in the head cap",
+   "version": "V1.9",
+   "status": "printed",
+   "statusSource": "manifest-V1.17.json baseline: \"printed V1.8 set with the V1.9 Orange plate\"",
+   "color": "Orange",
+   "quantity": 1,
+   "sourceStl": "guide/print/ext-v19/speaker_retainer_v19-world.stl",
+   "sourceSha256": "1d0a76b28bf7b35b48de616fd88545660be2eef404df2c1b3b947e92d920fb75",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "ext-v19/manifest-ext-v19.json: flat on its speaker-side face; 367.61 mm2 contact",
+   "reason": "New V1.9 part: 1.6 mm speaker retainer frame that holds the speaker and its 1 mm foam ring in the cap roof collar with two M2 x 6 screws (no glue).",
+   "file": "stl/our-parts/Orange/speaker_retainer_v19.stl",
+   "fileSha256": "cb8e300544069467ab11ebba483197cc7215aeeb892214f95c8ae95655707fb9",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    33.7,
+    35.6,
+    1.6
+   ]
+  },
+  {
+   "key": "face_panel_a7z",
+   "name": "Face panel for the Radxa Camera 13M 214 (A7Z head)",
+   "version": "V1.17",
+   "status": "printed",
+   "statusSource": "manifest-V1.18.json: \"V1.17 is the printed baseline (the builder started printing it on 2026-10-15)\"",
+   "color": "White",
+   "quantity": 1,
+   "sourceStl": "guide/print/face-a7z/face_panel_a7z.stl",
+   "sourceSha256": "ff0fa31c726fa0bd5b8d31602126bf4995d445b7d60c0e8e7c9e634314611ef1",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up); face-a7z/face_panel_a7z.stl, byte-identical to world/face_panel.stl",
+   "pose": "V1.8 face pose, front on the bed and bosses up: release-V1.8/manifest-V1.8.json face_panel.sourceToPrint applied to the robot-frame face (scripts/pose-sources-a7z.json); the result equals face-a7z/face_panel_a7z-print.stl to 2e-6 mm.",
+   "reason": "A7Z face (face-a7z/README.md, checks.json): the V1.8 face with the Camera Module 3 bearing lands and two locating pegs removed from its back (75.8 mm3) and four round bosses added (dia 4.8, 2.3 mm tall, blind dia 1.7 pilots that stop 1.2 mm behind the front) under the corner holes of the Radxa Camera 13M 214, which screws on with 4 x M2 x 4.",
+   "file": "stl/our-parts/White/face_panel_a7z.stl",
+   "fileSha256": "fc236c27ad3f378c2bd7d5ba690877ae2beb5ee148b38194c4e045a5bce6c3ad",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    87.7,
+    44.6,
+    3.6
+   ]
+  },
+  {
+   "key": "head_cap_a7z",
+   "name": "Head cap for the Radxa Cubie A7Z",
+   "version": "V1.17",
+   "status": "printed",
+   "statusSource": "manifest-V1.18.json: \"V1.17 is the printed baseline (the builder started printing it on 2026-10-15)\"",
+   "color": "White",
+   "quantity": 1,
+   "sourceStl": "guide/print/a7z-head/head_cap_a7z-world.stl",
+   "sourceSha256": "bbedb8044687c86906cdcf1adb82eae5c3c5f8bb84fc8bdd24f5824375b5e257",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "V1.9 cap pose (roof on the bed), release-V1.9/manifest-V1.9.json head_cap_v19.sourceToPrint (scripts/pose-sources-a7z.json): the A7Z cap is the V1.9 cap with material removed inside only, so the crown strip, 104.4 mm2 true contact and the ...",
+   "reason": "A7Z head cap (a7z-head/build_a7z_head.py, checks.json): the V1.9 cap for the Radxa Cubie A7Z, which has the Pi Zero outline and hole pattern but carries the camera FPC connector and the microSD socket on its underside right where the V1.9 rails touch the board.",
+   "file": "stl/our-parts/White/head_cap_a7z.stl",
+   "fileSha256": "a6551dfb4f75750e11c39905f4137e98960e12eec4a7aaaac18079030ba451aa",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    126.5,
+    91.6,
+    47.1
+   ]
+  },
+  {
+   "key": "shell_left_v20",
+   "name": "Left torso shell, screwed to the pack",
+   "version": "V1.17",
+   "status": "printed",
+   "statusSource": "manifest-V1.18.json: \"V1.17 is the printed baseline (the builder started printing it on 2026-10-15)\"",
+   "color": "White",
+   "quantity": 1,
+   "sourceStl": "guide/print/v20-source/shell_left_v20-world.stl",
+   "sourceSha256": "4e55338ec1eb24ad5d70daccd4a7f36bdc29251b32f478339fed7a8f3dc35410",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "The 10/1 print pose of community-8.stl (rigid registration of the printed shell, residual under 0.00001 mm; scripts/pose-sources.json) turned 1.99 deg so the flat outer side face (753.5 mm2 facet) lies on the bed: the 10/1 left shell stood ...",
+   "reason": "V2.0 side shell (print/v20-source/README.md, the builder 2026-10-13): one M2 x 6 straight down through the roof (dia 2.2 hole, dia 4.4 counterbore, floor 1.0 mm below the rim) into the V1.9 pack shoulder bar at x -21.5, y +20, replacing the rear cross screw that had to be driven 27 mm down a hand-drilled tunnel; the cross tunnel at x -38, z 35 is filled flush (360.6 mm3); S12-horn-029..032 get dia 4.4 ...",
+   "file": "stl/our-parts/White/shell_left_v20.stl",
+   "fileSha256": "7f045af5c0a88a2c140c45c564b5d06c32044ff2a87c3d137f365058e65934c0",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    41.7,
+    80.9,
+    34.0
+   ]
+  },
+  {
+   "key": "shell_right_v20",
+   "name": "Right torso shell, screwed to the pack",
+   "version": "V1.17",
+   "status": "printed",
+   "statusSource": "manifest-V1.18.json: \"V1.17 is the printed baseline (the builder started printing it on 2026-10-15)\"",
+   "color": "White",
+   "quantity": 1,
+   "sourceStl": "guide/print/v20-source/shell_right_v20-world.stl",
+   "sourceSha256": "a718e9279c97254fe335d7064c90aa6a18d2e72065860ffad058334d1ced63a7",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "The 10/1 print pose of community-10.stl (rigid registration of the printed shell, residual under 0.00001 mm; scripts/pose-sources.json) turned 0.036 deg so the flat outer side face (788 mm2 facet) lies exactly on the bed: 1228 mm2 true ...",
+   "reason": "V2.0 side shell (print/v20-source/README.md, the builder 2026-10-13): one M2 x 6 straight down through the roof (dia 2.2 hole, dia 4.4 counterbore, floor 1.0 mm below the rim) into the V1.9 pack shoulder bar at x -21.5, y -20, replacing the rear cross screw that had to be driven 27 mm down a hand-drilled tunnel; the cross tunnel at x -38, z 35 is filled flush (276.6 mm3); S12-horn-026..028 get dia 4.4 ...",
+   "file": "stl/our-parts/White/shell_right_v20.stl",
+   "fileSha256": "0e2fa89f05ae0da5ad52274cf088bef4b634e91bc1422f78b534c8598de8f52a",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    42.4,
+    80.5,
+    32.0
+   ]
+  },
+  {
+   "key": "thigh_left",
+   "name": "Left thigh body (community part reprinted in white)",
+   "version": "V1.17",
+   "status": "printed",
+   "statusSource": "manifest-V1.18.json: \"V1.17 is the printed baseline (the builder started printing it on 2026-10-15)\"",
+   "color": "White",
+   "quantity": 1,
+   "sourceStl": "build-pack-20260913/assembly/print-parts/community-74.stl",
+   "sourceSha256": "5b21f2cc1e90c4a48bf977814a20a4f20f41231424832b81ed947b4f4925b710",
+   "printStl": null,
+   "sourceFrame": "10/1 print STL (already in its print pose)",
+   "pose": "10/1 pose, flat, 28.0 mm tall, 1368.8 mm2 contact, tip angle 59.1 deg.",
+   "reason": "Colour only: the stock 10/1 thigh geometry reprinted in white for colour scheme C; geometry unchanged.",
+   "file": "stl/our-parts/White/thigh_left.stl",
+   "fileSha256": "28703b0a2c59259cb64cafa481676fd7187b5765115b90c4bc0ccacf00ab0e25",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    61.0,
+    47.7,
+    28.0
+   ]
+  },
+  {
+   "key": "thigh_right",
+   "name": "Right thigh body (community part reprinted in white)",
+   "version": "V1.17",
+   "status": "printed",
+   "statusSource": "manifest-V1.18.json: \"V1.17 is the printed baseline (the builder started printing it on 2026-10-15)\"",
+   "color": "White",
+   "quantity": 1,
+   "sourceStl": "build-pack-20260913/assembly/print-parts/community-72.stl",
+   "sourceSha256": "2eda6338c20e99940f23b2d71f5103d8119ead44e4e32fb28228afaa00ed1a4d",
+   "printStl": null,
+   "sourceFrame": "10/1 print STL (already in its print pose)",
+   "pose": "10/1 pose, as thigh_left (orientation-decision.json).",
+   "reason": "Colour only: the stock 10/1 thigh geometry reprinted in white for colour scheme C; geometry unchanged.",
+   "file": "stl/our-parts/White/thigh_right.stl",
+   "fileSha256": "37359b9658cd59da2451d0669ba5f2d7789c8a48e0150a66c4901943e417da28",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    61.0,
+    47.7,
+    28.0
+   ]
+  },
+  {
+   "key": "foot_left_slipfit",
+   "name": "Left foot, slip fit on the ankle",
+   "version": "V1.22",
+   "status": "printed",
+   "statusSource": "manifest-V1.24.json: \"V1.22 is printed (the builder 2026-10-20)\"",
+   "color": "Yellow",
+   "quantity": 3,
+   "sourceStl": "guide/print/foot-slipfit-20261019/foot-left-slipfit.stl",
+   "sourceSha256": "210c953abf325113dcaa47a7967a847f4ea5766c3cae2fcd571b7a7ca0773045",
+   "printStl": "guide/print/foot-slipfit-20261019/foot-left-slipfit.stl",
+   "sourceFrame": "community-44.stl print frame (mm; flat sole at z = 0)",
+   "pose": "The stock community-44.stl pose: flat sole on the bed, as the printed feet were made.",
+   "reason": "Replaces the printed community-44.stl (stock object 32, the left foot).",
+   "file": "stl/our-parts/Yellow/foot_left_slipfit.stl",
+   "fileSha256": "210c953abf325113dcaa47a7967a847f4ea5766c3cae2fcd571b7a7ca0773045",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    54.0,
+    41.2,
+    18.4
+   ]
+  },
+  {
+   "key": "foot_right_slipfit",
+   "name": "Right foot, slip fit on the ankle",
+   "version": "V1.22",
+   "status": "printed",
+   "statusSource": "manifest-V1.24.json: \"V1.22 is printed (the builder 2026-10-20)\"",
+   "color": "Yellow",
+   "quantity": 3,
+   "sourceStl": "guide/print/foot-slipfit-20261019/foot-right-slipfit.stl",
+   "sourceSha256": "b2d9a099b2192c50ffe52a31e7cb7ddbabe7d2fa56a69cffb6c0a464823f012e",
+   "printStl": "guide/print/foot-slipfit-20261019/foot-right-slipfit.stl",
+   "sourceFrame": "community-46.stl print frame (mm; flat sole at z = 0)",
+   "pose": "The stock community-46.stl pose: flat sole on the bed, as the printed feet were made.",
+   "reason": "Replaces the printed community-46.stl (stock object 30, the right foot).",
+   "file": "stl/our-parts/Yellow/foot_right_slipfit.stl",
+   "fileSha256": "b2d9a099b2192c50ffe52a31e7cb7ddbabe7d2fa56a69cffb6c0a464823f012e",
+   "frame": "print pose (bed at z 0)",
+   "sizeMm": [
+    54.0,
+    41.2,
+    18.4
+   ]
+  },
+  {
+   "key": "head_bottom",
+   "name": "Lower head shell (upper lip printed on, no beak-roof window)",
+   "version": "V1.8",
+   "status": "printed",
+   "statusSource": "manifest-V1.9.json: \"on top of the printed V1.8 set\"",
+   "color": "Yellow",
+   "quantity": 1,
+   "sourceStl": "guide/print/world/head_bottom.stl",
+   "sourceSha256": "1046c62e7abb292a39ca683651666e5ef775b970032c64ebde4355d8fe1dc3ff",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "V1.6 final lower-shell flat pose (final-V1.6.json head_bottom.sourceToPrint); the source frame is the same robot frame",
+   "reason": "V1.8 lower head shell: the V1.6 shell with the square beak-roof window filled completely (the raised Pi no longer needs it), and the upper lip pad (source p.obj / ID40) printed as part of the shell instead of being glued in after closing, which had covered the two front closure screws; a 5.2 mm driver hole runs through the lip under each front screw.",
+   "file": "stl/our-parts/Yellow/head_bottom.stl",
+   "fileSha256": "051be34cbdce7b4e66ceb011f11477eea6c10ee3f5d3f47627dd4280aa41f9fd",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    91.8,
+    116.7,
+    20.1
+   ]
+  },
+  {
+   "key": "jaw_frame",
+   "name": "Jaw frame with the lower lip",
+   "version": "V1.8",
+   "status": "printed",
+   "statusSource": "manifest-V1.9.json: \"on top of the printed V1.8 set\"",
+   "color": "Yellow",
+   "quantity": 1,
+   "sourceStl": "guide/print/world/jaw_frame.stl",
+   "sourceSha256": "0afeeee701671616b368977826fb82d4431540c70a8358adeb11d593fca655a1",
+   "printStl": null,
+   "sourceFrame": "robot frame (mm, x forward, y left, z up)",
+   "pose": "10/1 batch jaw frame pose (copy-manifest object 14, community-4.stl), recovered by registering that print mesh to the source jaw (vertex-identical, residual 1e-8); the source frame is the same robot frame",
+   "reason": "V1.8 jaw frame: the 10/1 jaw frame (source 4.obj / ID4) with the lower lip pad (source q.obj / ID42) printed as part of it instead of glued into its pocket, so no joint in the beak is glued and the whole beak is yellow.",
+   "file": "stl/our-parts/Yellow/jaw_frame.stl",
+   "fileSha256": "31dde54d43d1f905082762b786b54fb9665382b1e03184473e01256bfc242ef7",
+   "frame": "print pose (bed at z 0), rotated here with the release sourceToPrint matrix",
+   "sizeMm": [
+    91.4,
+    69.4,
+    29.0
+   ]
+  }
+ ],
+ "retiredOurParts": [
+  {
+   "key": "head_cap",
+   "version": "V1.6",
+   "retiredBy": "V1.7",
+   "reason": "same part re-released"
+  },
+  {
+   "key": "openrb_tray",
+   "version": "V1.6",
+   "retiredBy": "V1.7",
+   "reason": "same part re-released"
+  },
+  {
+   "key": "openrb_tray",
+   "version": "V1.7",
+   "retiredBy": "V1.8",
+   "reason": "manifest-V1.8.json: the rear electronics pack replaces the OpenRB tray"
+  },
+  {
+   "key": "imu_cover",
+   "version": "V1.6",
+   "retiredBy": "V1.8",
+   "reason": "manifest-V1.8.json: the rear electronics pack replaces the IMU clamp and cover"
+  },
+  {
+   "key": "imu_clamp",
+   "version": "V1.6",
+   "retiredBy": "V1.8",
+   "reason": "manifest-V1.8.json: the rear electronics pack replaces the IMU clamp and cover"
+  },
+  {
+   "key": "camera_retainer",
+   "version": "V1.6",
+   "retiredBy": "V1.8",
+   "reason": "manifest-V1.8.json: the V1.8 face plate carries direct camera screws"
+  },
+  {
+   "key": "head_bottom",
+   "version": "V1.6",
+   "retiredBy": "V1.8",
+   "reason": "same part re-released"
+  },
+  {
+   "key": "face_panel",
+   "version": "V1.6",
+   "retiredBy": "V1.8",
+   "reason": "same part re-released"
+  },
+  {
+   "key": "head_cap",
+   "version": "V1.7",
+   "retiredBy": "V1.8",
+   "reason": "same part re-released"
+  },
+  {
+   "key": "eye_trim",
+   "version": "V1.6",
+   "retiredBy": "V1.8",
+   "reason": "same part re-released"
+  },
+  {
+   "key": "speaker_cradle",
+   "version": "V1.6",
+   "retiredBy": "V1.9",
+   "reason": "the V1.9 speaker retainer in the head cap replaces the V1.6 speaker cage (guide/content/build_guide_data.py)"
+  },
+  {
+   "key": "speaker_keeper",
+   "version": "V1.6",
+   "retiredBy": "V1.9",
+   "reason": "same"
+  },
+  {
+   "key": "rear_pack",
+   "version": "V1.8",
+   "retiredBy": "V1.9",
+   "reason": "same part re-released"
+  },
+  {
+   "key": "rear_pack_cover",
+   "version": "V1.8",
+   "retiredBy": "V1.17",
+   "reason": "replaced by the V1.11 rear_frame, which carries the same cover outline, holes and lip"
+  },
+  {
+   "key": "head_cap_v19",
+   "version": "V1.9",
+   "retiredBy": "V1.17",
+   "reason": "replaced by the white A7Z head cap; keep as a spare for the Pi Zero W"
+  },
+  {
+   "key": "face_panel",
+   "version": "V1.8",
+   "retiredBy": "V1.17",
+   "reason": "replaced by the A7Z face panel: its back carries the Camera Module 3 lands and pegs, not the 13M 214 bosses"
+  },
+  {
+   "key": "clip_cap_v19",
+   "version": "V1.9",
+   "retiredBy": "V1.17",
+   "reason": "replaced by the A7Z cap clip: its arm crosses the A7Z micro HDMI socket"
+  },
+  {
+   "key": "rear_lid",
+   "version": "V1.17",
+   "retiredBy": "V1.20",
+   "reason": "its two low 1.0 mm screw floors tore through (IMG_7004); replaced by the V1.20 cap (the unprinted V1.19 design) on the same four M2 x 10"
+  },
+  {
+   "key": "ankle_base_left",
+   "version": "V1.22",
+   "retiredBy": "V1.24",
+   "reason": "V1.22 split-ankle base: thin screw posts that catch the servo wire; replaced by ankle_outer_left"
+  },
+  {
+   "key": "ankle_cheek_left",
+   "version": "V1.22",
+   "retiredBy": "V1.24",
+   "reason": "V1.22 split-ankle side: thin screw posts that catch the servo wire; replaced by ankle_inner_left"
+  },
+  {
+   "key": "ankle_base_right",
+   "version": "V1.22",
+   "retiredBy": "V1.24",
+   "reason": "V1.22 split-ankle base: thin screw posts that catch the servo wire; replaced by ankle_outer_right"
+  },
+  {
+   "key": "ankle_cheek_right",
+   "version": "V1.22",
+   "retiredBy": "V1.24",
+   "reason": "V1.22 split-ankle side: thin screw posts that catch the servo wire; replaced by ankle_inner_right"
+  },
+  {
+   "key": "ankle_inner_left",
+   "version": "V1.24",
+   "retiredBy": "V1.25",
+   "reason": "V1.24 inner half with the 45 deg teardrop sleeve pocket; replaced by the round-bore ankle_inner_left"
+  },
+  {
+   "key": "ankle_inner_right",
+   "version": "V1.24",
+   "retiredBy": "V1.25",
+   "reason": "V1.24 inner half with the 45 deg teardrop sleeve pocket; replaced by the round-bore ankle_inner_right"
+  },
+  {
+   "key": "ankle_outer_left",
+   "version": "V1.24",
+   "retiredBy": "V1.25",
+   "reason": "same part re-released"
+  },
+  {
+   "key": "ankle_outer_right",
+   "version": "V1.24",
+   "retiredBy": "V1.25",
+   "reason": "same part re-released"
+  },
+  {
+   "key": "ankle_sleeve_right",
+   "version": "V1.22",
+   "retiredBy": "V1.28",
+   "reason": "manifest-V1.28.json: the right link carries its sleeve printed on"
+  },
+  {
+   "key": "battery_backpack_frame",
+   "version": "V1.20",
+   "retiredBy": "V1.31",
+   "reason": "the DFR1202 does not go between its clip arms; replaced by the V1.31 frame with the wider slot"
+  }
+ ],
+ "communityRetained": [
+  {
+   "file": "stl/community/community-53.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "b122b8cd53efdad68905ba1c18abdf64468262a2e14fa2d395c7252e66f33f91",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    31
+   ]
+  },
+  {
+   "file": "stl/community/community-87.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "f150280c891c25f9ba9ff3ef6ccc162f1e899b24a58ebf936d5f5637e928da87",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    32
+   ]
+  },
+  {
+   "file": "stl/community/community-88.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "88e53959f3a62063d76b638c0c5a946e488a6c8c1006ee0a8e2b40e7a9ae414b",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    33
+   ]
+  },
+  {
+   "file": "stl/community/community-89.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "d5387a3198d5548528292dc5b5512c8035815bcf158307d9647401cd92a2acf6",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    34
+   ]
+  },
+  {
+   "file": "stl/community/community-90.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "88e53959f3a62063d76b638c0c5a946e488a6c8c1006ee0a8e2b40e7a9ae414b",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    35
+   ]
+  },
+  {
+   "file": "stl/community/community-91.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "489310f9bd07f066d70e6a4360cd8bcdaa5999f0fd520685fa276007a59ce294",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    36
+   ]
+  },
+  {
+   "file": "stl/community/community-92.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "961858cd38c720419224b7ac5e77075e3eaf692550d191ef38d5a505aab9d426",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    37
+   ]
+  },
+  {
+   "file": "stl/community/community-93.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "ecd5217b1140598db1d3ce981911c058014db53107792e0dc8d1549becc1e7db",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    38
+   ]
+  },
+  {
+   "file": "stl/community/community-94.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "ecd5217b1140598db1d3ce981911c058014db53107792e0dc8d1549becc1e7db",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    39
+   ]
+  },
+  {
+   "file": "stl/community/community-95.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "d2e43b66a0d147d7b24df467b91f09f5138313c8c351624144df848d74ced061",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    40
+   ]
+  },
+  {
+   "file": "stl/community/community-96.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "5ae77336f826bb020a1e8c187dae4ea35fa2c4b9ccffbfe86479bf87e8b22a9a",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    41
+   ]
+  },
+  {
+   "file": "stl/community/community-97.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "c027b124f54d60c1691a97cc9c64b6dc59c82e1603a160cbddae84b041966711",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    42
+   ]
+  },
+  {
+   "file": "stl/community/community-98.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "d41814a3869cf53c0a22f5640394a9156d72effeea41b084f35b00e64b458320",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    43
+   ]
+  },
+  {
+   "file": "stl/community/community-99.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "d3870e9facf3fd6576516f59a96a26a0e592cb325c9256e09948c7317b8dd729",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    44
+   ]
+  },
+  {
+   "file": "stl/community/community-100.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "b4fa7a901e3e76336c2cf02a4f49b3c2847e1151aba2a3720a75ec018107b10a",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    45
+   ]
+  },
+  {
+   "file": "stl/community/community-101.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "66ee862c7854cb1842700d1197a672138a062f7a8a0d171ba5eac8a9992b6819",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    46
+   ]
+  },
+  {
+   "file": "stl/community/community-103.stl",
+   "name": "22 mm printed sliding ring",
+   "quantity": 1,
+   "fileSha256": "4b0934e9e134e7c28af3ef11aaf898c9e34b9cbe60ab626a01009b4321ddec17",
+   "sourceName": "ersgtbgertgestrg.obj",
+   "instances": [
+    48
+   ]
+  },
+  {
+   "file": "stl/community/community-70.stl",
+   "name": "Head yaw/roll link",
+   "quantity": 1,
+   "fileSha256": "3a6c05cf399d5b7974ba8a427b2ae647216a1d75b3e7ccf2b1c7a522f9b191ff",
+   "sourceName": "dfbdfbbbbb1.obj",
+   "instances": [
+    81
+   ]
+  },
+  {
+   "file": "stl/community/community-14.stl",
+   "name": "Hip bracket",
+   "quantity": 1,
+   "fileSha256": "080a160d7b5b514118c908803d34191542c5960192e66241d365a3f1d111ca7c",
+   "sourceName": "b.obj",
+   "instances": [
+    11
+   ]
+  },
+  {
+   "file": "stl/community/community-60.stl",
+   "name": "Hip bracket",
+   "quantity": 1,
+   "fileSha256": "8a37a457e689e79dac79e113ff883821d197540b953068b92cd24cb8785c943a",
+   "sourceName": "b.obj",
+   "instances": [
+    12
+   ]
+  },
+  {
+   "file": "stl/community/community-36.stl",
+   "name": "Hip yaw/roll link A",
+   "quantity": 1,
+   "fileSha256": "11527480ec4fcccbc71ebed70867895711d55c533bb7862a73fd9cee4a558bfb",
+   "sourceName": "n.obj",
+   "instances": [
+    22
+   ]
+  },
+  {
+   "file": "stl/community/community-38.stl",
+   "name": "Hip yaw/roll link B",
+   "quantity": 1,
+   "fileSha256": "a6f6f04c0ea32e971c3fab7124357f87fd3732dd9a15bfc67b75110dc48207fb",
+   "sourceName": "o.obj",
+   "instances": [
+    23
+   ]
+  },
+  {
+   "file": "stl/community/community-30.stl",
+   "name": "Lower-leg link A",
+   "quantity": 1,
+   "fileSha256": "a1c95b38c3e759f5be201dd85a16dae2e66b23c2d3faa9eb3201ab457cf108fa",
+   "sourceName": "k.obj",
+   "instances": [
+    19
+   ]
+  },
+  {
+   "file": "stl/community/community-16.stl",
+   "name": "Neck link A",
+   "quantity": 1,
+   "fileSha256": "0e5738da8d515a1b964482c7bd7643c3244dbd3a77936ceefafae20a0f7fc6f4",
+   "sourceName": "d.obj",
+   "instances": [
+    13
+   ]
+  },
+  {
+   "file": "stl/community/community-18.stl",
+   "name": "Neck link B",
+   "quantity": 1,
+   "fileSha256": "0e5738da8d515a1b964482c7bd7643c3244dbd3a77936ceefafae20a0f7fc6f4",
+   "sourceName": "e.obj",
+   "instances": [
+    14
+   ]
+  },
+  {
+   "file": "stl/community/community-50.stl",
+   "name": "Passive roll support",
+   "quantity": 1,
+   "fileSha256": "ede0f57b768e64c97041a266a535dcac96818ef36cf353d5485541091dfb76f0",
+   "sourceName": "dfvdfb.obj",
+   "instances": [
+    29
+   ]
+  },
+  {
+   "file": "stl/community/community-51.stl",
+   "name": "Passive roll support",
+   "quantity": 1,
+   "fileSha256": "ede0f57b768e64c97041a266a535dcac96818ef36cf353d5485541091dfb76f0",
+   "sourceName": "dfvdfb.obj",
+   "instances": [
+    30
+   ]
+  },
+  {
+   "file": "stl/community/community-59.stl",
+   "name": "Printed idler cap",
+   "quantity": 9,
+   "fileSha256": "70f8aa0de4b35500d22967a68e4e6d4f5473ca1994a7da53851301346bf79c87",
+   "sourceName": "idle_cap.stl",
+   "instances": [
+    63,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76
+   ]
+  },
+  {
+   "file": "stl/community/community-78.stl",
+   "name": "Printed idler cap",
+   "quantity": 1,
+   "fileSha256": "d01cf7c500b5317d86d5b426315febb4ddeb9826e91f13c16870048eded84639",
+   "sourceName": "idle_cap.stl",
+   "instances": [
+    64
+   ]
+  },
+  {
+   "file": "stl/community/community-80.stl",
+   "name": "Printed idler cap",
+   "quantity": 1,
+   "fileSha256": "2e70313cfaafaec997cad22e2cc234951779dc6f8ff20dd410f4d5c5ed8281ac",
+   "sourceName": "idle_cap.stl",
+   "instances": [
+    65
+   ]
+  },
+  {
+   "file": "stl/community/community-82.stl",
+   "name": "Printed idler cap",
+   "quantity": 1,
+   "fileSha256": "70f8aa0de4b35500d22967a68e4e6d4f5473ca1994a7da53851301346bf79c87",
+   "sourceName": "idle_cap.stl",
+   "instances": [
+    66
+   ]
+  },
+  {
+   "file": "stl/community/community-84.stl",
+   "name": "Printed idler cap",
+   "quantity": 1,
+   "fileSha256": "d01cf7c500b5317d86d5b426315febb4ddeb9826e91f13c16870048eded84639",
+   "sourceName": "idle_cap.stl",
+   "instances": [
+    67
+   ]
+  },
+  {
+   "file": "stl/community/community-86.stl",
+   "name": "Printed idler cap",
+   "quantity": 1,
+   "fileSha256": "2e70313cfaafaec997cad22e2cc234951779dc6f8ff20dd410f4d5c5ed8281ac",
+   "sourceName": "idle_cap.stl",
+   "instances": [
+    68
+   ]
+  },
+  {
+   "file": "stl/community/community-55.stl",
+   "name": "Printed passive idler",
+   "quantity": 7,
+   "fileSha256": "b9ed56e4e85bbdb70e05843d09022ec0c1f45507be45cca5a35ff56fbc6628a6",
+   "sourceName": "idle_horn.stl",
+   "instances": [
+    49,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62
+   ]
+  },
+  {
+   "file": "stl/community/community-56.stl",
+   "name": "Printed passive idler",
+   "quantity": 1,
+   "fileSha256": "5f78a0177d8ffb3ea50cd293831abd2357998dbf32b2b4d7ca03ebce4c72b15d",
+   "sourceName": "idle_horn.stl",
+   "instances": [
+    50
+   ]
+  },
+  {
+   "file": "stl/community/community-57.stl",
+   "name": "Printed passive idler",
+   "quantity": 1,
+   "fileSha256": "07c1171b4fdc6351c74e20b9448469374cc7591a06f84a562018fb6feb79cf87",
+   "sourceName": "idle_horn.stl",
+   "instances": [
+    51
+   ]
+  },
+  {
+   "file": "stl/community/community-77.stl",
+   "name": "Printed passive idler",
+   "quantity": 1,
+   "fileSha256": "2c2a69639ee7b891babec573fe9bb30560ac8fc1a1549658eac67b73f2464bf3",
+   "sourceName": "idle_horn.stl",
+   "instances": [
+    52
+   ]
+  },
+  {
+   "file": "stl/community/community-79.stl",
+   "name": "Printed passive idler",
+   "quantity": 1,
+   "fileSha256": "2c2a69639ee7b891babec573fe9bb30560ac8fc1a1549658eac67b73f2464bf3",
+   "sourceName": "idle_horn.stl",
+   "instances": [
+    53
+   ]
+  },
+  {
+   "file": "stl/community/community-81.stl",
+   "name": "Printed passive idler",
+   "quantity": 1,
+   "fileSha256": "67b29f8d9e086d5a6c1f8ad1af2275307b7ec59ffe9584dc918e916a30a169a5",
+   "sourceName": "idle_horn.stl",
+   "instances": [
+    54
+   ]
+  },
+  {
+   "file": "stl/community/community-83.stl",
+   "name": "Printed passive idler",
+   "quantity": 1,
+   "fileSha256": "2c2a69639ee7b891babec573fe9bb30560ac8fc1a1549658eac67b73f2464bf3",
+   "sourceName": "idle_horn.stl",
+   "instances": [
+    55
+   ]
+  },
+  {
+   "file": "stl/community/community-85.stl",
+   "name": "Printed passive idler",
+   "quantity": 1,
+   "fileSha256": "2c2a69639ee7b891babec573fe9bb30560ac8fc1a1549658eac67b73f2464bf3",
+   "sourceName": "idle_horn.stl",
+   "instances": [
+    56
+   ]
+  },
+  {
+   "file": "stl/community/community-20.stl",
+   "name": "Thigh reinforcing plate A",
+   "quantity": 1,
+   "fileSha256": "386bbc31603a6b6ba58d0d47307425ae2a4e09f0845c8329839fa2f5ad1ab87f",
+   "sourceName": "f.obj",
+   "instances": [
+    15
+   ]
+  },
+  {
+   "file": "stl/community/community-22.stl",
+   "name": "Thigh reinforcing plate B",
+   "quantity": 1,
+   "fileSha256": "4fa5a1d6573b1b444ee15d5df53582c5ecf7f1bbb0d14587835004640dbf148b",
+   "sourceName": "g.obj",
+   "instances": [
+    16
+   ]
+  },
+  {
+   "file": "stl/community/community-34.stl",
+   "name": "Torso base",
+   "quantity": 1,
+   "fileSha256": "513132dd3e7265ee8c202f3ed83c74fba7bd0938dfa9a682351268966c1f52ff",
+   "sourceName": "m.obj",
+   "instances": [
+    21
+   ]
+  }
+ ],
+ "communityRetired": [
+  {
+   "index": 0,
+   "name": "Integrated power support",
+   "reason": "replaced by the V1.8 rear electronics pack"
+  },
+  {
+   "index": 1,
+   "name": "Small-regulator cover",
+   "reason": "no small regulator in this build"
+  },
+  {
+   "index": 2,
+   "name": "Jaw-clearance head cap with USB service window",
+   "reason": "replaced by the head cap releases"
+  },
+  {
+   "index": 3,
+   "name": "Torso IMU clamp",
+   "reason": "the BNO085 sits on the V1.9 rear pack rib"
+  },
+  {
+   "index": 4,
+   "name": "IMU rear cover",
+   "reason": "same"
+  },
+  {
+   "index": 5,
+   "name": "Eleven-fuse carrier",
+   "reason": "no fuses in the harness"
+  },
+  {
+   "index": 6,
+   "name": "Coaxial jaw motor support",
+   "reason": "the open jaw support (V1.6 jaw_support_original) is used instead"
+  },
+  {
+   "index": 7,
+   "name": "Lower head shell",
+   "reason": "replaced by the V1.8 lower head shell"
+  },
+  {
+   "index": 8,
+   "name": "Moving jaw frame",
+   "reason": "replaced by the V1.8 jaw frame with the lower lip"
+  },
+  {
+   "index": 9,
+   "name": "Left shell",
+   "reason": "replaced by the white V1.17 left torso shell"
+  },
+  {
+   "index": 10,
+   "name": "Right shell",
+   "reason": "replaced by the white V1.17 right torso shell"
+  },
+  {
+   "index": 17,
+   "name": "Original PCB retaining strip",
+   "reason": "battery-bay part of the upstream design, not used"
+  },
+  {
+   "index": 18,
+   "name": "Neck U bracket",
+   "reason": "replaced by the V1.6 neck pitch bracket with integral screw seats"
+  },
+  {
+   "index": 20,
+   "name": "Lower-leg link B",
+   "reason": "replaced by V1.28 lower_right"
+  },
+  {
+   "index": 24,
+   "name": "Fixed upper lip pad",
+   "reason": "printed as part of the V1.8 lower head shell"
+  },
+  {
+   "index": 25,
+   "name": "Moving lower lip pad",
+   "reason": "printed as part of the V1.8 jaw frame"
+  },
+  {
+   "index": 26,
+   "name": "Community foot A, combined mesh",
+   "reason": "replaced by V1.22 foot_left_slipfit"
+  },
+  {
+   "index": 27,
+   "name": "Community foot B, combined mesh",
+   "reason": "replaced by V1.22 foot_right_slipfit"
+  },
+  {
+   "index": 28,
+   "name": "Eye outer ring",
+   "reason": "replaced by the eye trim"
+  },
+  {
+   "index": 47,
+   "name": "22 mm printed sliding ring",
+   "reason": "replaced by V1.8 neck_pitch_ring"
+  },
+  {
+   "index": 77,
+   "name": "14.6 mm printed ankle ring",
+   "reason": "replaced by V1.22 ankle_sleeve_left"
+  },
+  {
+   "index": 78,
+   "name": "14.6 mm printed ankle ring",
+   "reason": "replaced by V1.22 ankle_sleeve_right"
+  },
+  {
+   "index": 79,
+   "name": "Community right ankle",
+   "reason": "replaced by V1.25 ankle_outer_right"
+  },
+  {
+   "index": 80,
+   "name": "Community left ankle",
+   "reason": "replaced by V1.25 ankle_outer_left"
+  },
+  {
+   "index": 82,
+   "name": "Right thigh",
+   "reason": "replaced by V1.17 thigh_right"
+  },
+  {
+   "index": 83,
+   "name": "Left thigh",
+   "reason": "replaced by V1.17 thigh_left"
+  },
+  {
+   "index": 84,
+   "name": "Face panel and Pi mount",
+   "reason": "replaced by the face panel releases"
+  },
+  {
+   "index": 85,
+   "name": "Open regulator insert",
+   "reason": "replaced by the V1.8 rear electronics pack"
+  },
+  {
+   "index": 86,
+   "name": "Camera tilt foot",
+   "reason": "the camera sits in the eye"
+  },
+  {
+   "index": 87,
+   "name": "Camera cradle",
+   "reason": "same"
+  },
+  {
+   "index": 88,
+   "name": "Audio carrier",
+   "reason": "the speaker sits in the V1.9 retainer in the head cap"
+  }
+ ],
+ "communitySource": {
+  "file": "community/microduck-community-print-set.3mf",
+  "repository": "https://github.com/AI-FanGe/Microduck-build-tutorial",
+  "commit": "49678215d0b40529522772a40c06c216390449dd",
+  "license": "MIT (community/LICENSE-AI-FanGe)"
+ }
+}

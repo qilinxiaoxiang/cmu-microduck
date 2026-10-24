@@ -1,0 +1,37 @@
+// Radxa Cubie A7Z: run TWI7 (the BNO085 IMU bus, header pins 3 SDA / 5 SCL) in engine mode.
+//
+// In the default drv mode (twi_drv_used = 1, set by Radxa's own sun60iw2p1-twi7.dtbo) the A733
+// BSP sunxi-twi driver v2.6.9 wedges TWI7 until the driver is rebound: right after boot, after
+// any zero-length write (Blinka's device probe, i2cdetect quick-write) and after reads that hit
+// the BNO085 while it resets. Every later transfer then fails with "Address + Read bit
+// transmitted, ACK not received" (state 0x48) or "unknown error" (0xf9). Engine mode passes all
+// four cases (2026-10-18).
+//
+// Overlays apply in fdtoverlays order and u-boot-update (which rsetup runs after every overlay
+// change) lists /boot/dtbo/*.dtbo alphabetically, so the installed name must sort after
+// sun60iw2p1-twi7.dtbo; otherwise Radxa's overlay sets drv mode back. Hence the zz- prefix.
+//
+// Install on the A7Z (after Enable TWI7 is on in rsetup):
+//   dtc -@ -I dts -O dtb -o /tmp/zz-duck-twi7-engine.dtbo duck-twi7-engine.dts
+//   sudo install -m 644 /tmp/zz-duck-twi7-engine.dtbo /boot/dtbo/
+//   sudo u-boot-update      (fdtoverlays now ends with .../sun60iw2p1-twi7.dtbo ... zz-duck-twi7-engine.dtbo)
+//   sudo reboot
+// Check: cat /sys/devices/platform/soc@3000000/2517000.twi/twi_mode  ->  "Current mode is 0: engine"
+// rsetup lists it under Manage overlays as "MicroDuck: TWI7 in engine mode".
+// Undo: sudo rm /boot/dtbo/zz-duck-twi7-engine.dtbo, sudo u-boot-update, reboot.
+/dts-v1/;
+/plugin/;
+/ {
+	metadata {
+		title = "MicroDuck: TWI7 in engine mode";
+		compatible = "radxa,cubie-a7z";
+		category = "misc";
+		description = "Set twi_drv_used = 0 on TWI7 (2517000.twi). Added 2026-10-18: drv mode wedges after boot, zero-length writes and IMU reset NACKs.";
+	};
+	fragment@0 {
+		target-path = "/soc@3000000/twi@2517000";
+		__overlay__ {
+			twi_drv_used = <0>;
+		};
+	};
+};

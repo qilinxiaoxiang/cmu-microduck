@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CMU MicroDuck pages</title>
+<style>
+  :root { color-scheme: light; --ink: #1d1d1b; --muted: #5a5f66; --line: #e3e3df; --card: #faf9f6; --accent: #b7410e; }
+  html, body { margin: 0; background: #ffffff; color: var(--ink); font: 17px/1.55 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width: 860px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.9rem; margin: 0 0 8px; }
+  h2 { font-size: 1.2rem; margin: 36px 0 12px; }
+  p { margin: 0 0 14px; }
+  a { color: var(--accent); overflow-wrap: anywhere; }
+  .card { border: 1px solid var(--line); background: var(--card); border-radius: 12px; padding: 14px 16px; margin: 0 0 12px; }
+  .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .card p { margin: 0; color: var(--muted); }
+  .note { color: var(--muted); font-size: 0.95rem; }
+  img { max-width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 0 18px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>CMU MicroDuck: build and bring-up pages</h1>
+  <p>The pages of the <a href="https://github.com/qilinxiaoxiang/cmu-microduck">cmu-microduck</a> repository, which describes the first hand-built MicroDuck at Carnegie Mellon as it stood on 2026-10-23. Each page is self-contained: open it here or from a local copy of the repository.</p>
+  <img src="img/microduck-2026-10-23.jpg" alt="The CMU MicroDuck standing on 2026-10-23" width="1400" height="1050">
+
+  <h2>Assembly</h2>
+  <div class="card"><h3><a href="MICRODUCK-BUILD.html">Build guide</a></h3><p>11 chapters, 82 steps, 176 parts: a 3D view per step, the screw for every hole, the cable routes. The subtitle's voltages are from an earlier power version; the repository's <code>4-power</code> page has the current ones.</p></div>
+
+  <h2>Head computer and senses (Radxa Cubie A7Z)</h2>
+  <div class="card"><h3><a href="A7Z-PINS.html">Header wiring</a></h3><p>All seventeen Dupont wires on the A7Z 40-pin header, on photos. In Chinese; the pin numbers and colours are the content.</p></div>
+  <div class="card"><h3><a href="A7Z-WIRES.html">One-picture wire summary</a></h3><p>Click a pin or a wire to isolate it.</p></div>
+  <div class="card"><h3><a href="A7Z-ANTENNA.html">Wi-Fi antenna</a></h3><p>Sticking the AC019 antenna into the head cap and routing the pigtail.</p></div>
+  <div class="card"><h3><a href="A7Z-TOUCH.html">Touch pads</a></h3><p>Five copper pads in the cap, the XIAO ESP32-S3 board, the I2C link and the bench test.</p></div>
+
+  <h2>Power</h2>
+  <div class="card"><h3><a href="BATTERY-WIRING.html">Battery backpack wiring</a></h3><p>Power route B: 2S LiPo, switch, DFR1202 and the XT30/MR30 joints. Designed and bought; not yet run on the robot.</p></div>
+
+  <h2>Bring-up</h2>
+  <div class="card"><h3><a href="BRINGUP.html">Step-by-step bring-up (Raspberry Pi era)</a></h3><p>Written in Chinese for the Pi Zero W head the robot had until 2026-10-17. The OpenRB, servo chain, amplifier and head-fit steps still apply; the OS and camera steps are history.</p></div>
+
+  <h2>Parts sheets</h2>
+  <p class="note">One page per print release with a picture and the size of every part. V1.8 and V1.28 have no sheet.</p>
+  <div class="card"><p>
+    <a href="parts-sheets/PARTS-SHEET-V1.6.html">V1.6</a> ·
+    <a href="parts-sheets/PARTS-SHEET-V1.9.html">V1.9</a> ·
+    <a href="parts-sheets/PARTS-SHEET-V1.17.html">V1.17</a> ·
+    <a href="parts-sheets/PARTS-SHEET-V1.20.html">V1.20</a> ·
+    <a href="parts-sheets/PARTS-SHEET-V1.21.html">V1.21</a> ·
+    <a href="parts-sheets/PARTS-SHEET-V1.22.html">V1.22</a> ·
+    <a href="parts-sheets/PARTS-SHEET-V1.24.html">V1.24</a> ·
+    <a href="parts-sheets/PARTS-SHEET-V1.25.html">V1.25</a> ·
+    <a href="parts-sheets/PARTS-SHEET-V1.31.html">V1.31</a>
+  </p></div>
+</main>
+</body>
+</html>

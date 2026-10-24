@@ -1,0 +1,12 @@
+# Under-voltage log (vcgencmd get_throttled every 0.1 s, fsynced) in ~/duck/pwrlog.txt; survives a power cut.
+[Unit]
+Description=MicroDuck Pi under-voltage log
+
+[Service]
+User=pi
+ExecStart=/usr/bin/python3 /home/pi/duck/pwrlog.py
+Restart=always
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

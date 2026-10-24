@@ -1,0 +1,23 @@
+# 4. Power
+
+Two power routes. Route A is what the robot runs on today. Route B is designed and its parts are bought; the backpack is being built and is not yet on the robot.
+
+Both routes feed two loads: the servo rail into the OpenRB-150's J4 power input (jumper JP1 on VIN(DXL), so J4 feeds the Dynamixel bus), and 5 V into the A7Z header pins 2 (5 V) and 6 (GND). The XL330's Max Voltage Limit is 7.0 V and cannot be raised, and the walking policies were trained for 6.5 to 8.2 V, so the servo rail sits at 7.0 V under load (7.32 V unloaded, measured 2026-10-16). The OpenRB itself takes its logic power from the same J4 input when JP1 is on VIN(DXL).
+
+## Route A: USB-C PD, in daily use
+
+A USB-C Power Delivery source at 20 V plugs into an Adafruit 5991 (HUSB238) decoy board, whose DIP switches ask the source for 20 V. From the 5991 the 20 V goes to two XL4015 buck converter modules in the printed rear converter box: XL4015 #1 is set to the servo rail (7.0 V under load) and feeds the OpenRB J4 through a short lead; XL4015 #2 is set to 5.0 V and feeds the A7Z header pins 2 and 6 through a 22 AWG pair with Dupont plugs. Set the trimmers with a meter before you connect anything (`images/xl4015_trimmers_annotated.png` names them): CV sets the output voltage, CC sets the current limit (turn it fully up), the third trimmer is the charging-LED threshold and does nothing here.
+
+Sources that work: a 20 V 5 A (100 W) USB-C PD wall charger, or the [Xiaomi 212W HyperCharge Power Bank 25000](https://www.mi.com/global/product/xiaomi-212w-hypercharge-power-bank-25000/), which carried the robot untethered on 2026-10-23. A 20 V 3 A (60 W) charger is not enough: it folds back at the walking current peaks (about 5 A on the servo rail in a fall) and the A7Z freezes or resets (2026-10-22). The power bank's PD offer and its voltage under load were not measured.
+
+Pictures: `images/pd5991_board.jpg`, `images/pd5991_dip.jpg`, `images/usb_pd_5991_top.jpg` (the decoy and its switches), `images/xl4015_board.jpg`, `images/xl4015_robotis_kit_top.jpg` (the converter modules; two come with the ROBOTIS kits), `images/openrb-wiring.png`, `images/openrb_top.png`, `images/openrb_150_top.png` (J4, JP1 and the bus ports on the OpenRB). `images/power.png` (and `power-web.jpg`) is the project's power diagram; it was drawn for the earlier 15 V, 7.40 V and Raspberry Pi version of this route and the numbers on it are stale: read the voltages from this page. The build guide chapter "Power" (`../docs/MICRODUCK-BUILD.html`) shows the converter box assembly and the same stale subtitle.
+
+## Route B: 2S LiPo backpack (designed, parts bought, not yet run)
+
+A Tattu 2S 650 mAh 75C LiPo with an XT30 plug goes through a rocker switch to two things in one printed backpack: an XT30 lead straight to the servo rail (the OpenRB J4, through the robot's XT30 inlet, a DFRobot FIT0586 pair), and a DFRobot DFR1202 buck module making 5 V for the A7Z over an MR30 joint (a shape that cannot be mated with the servo XT30 by mistake). Swapping between route A and route B is two plugs. A full pack reads 8.4 V, above the servos' 7.0 V limit, so every servo must carry Shutdown 52 (`2-servos-openrb/scripts/set_shutdown.py`) so the input-voltage flag does not cut torque; the runtime's battery guard then warns at 7.0 V and stops walking at 6.6 V. Budget: about 1.3 A while walking, about 24 minutes per pack.
+
+The switch planned in the decision record was the REV Robotics REV-31-1387 XT30 switch cable; the backpack frames actually printed (V1.20 and the unprinted V1.31 with the wider DFR1202 slot) carry the cutout for a Swann 39 rocker from the club drawer, wired as a short switch lead. `battery-backpack/battery_backpack_frame-V1.31-print.stl` and `battery-backpack/battery_backpack_cap-V1.20-print.stl` are the print files. `../docs/BATTERY-WIRING.html` is the wiring page with photos of every part (`images/tattu_2s650_xt30.jpg`, `images/dfr1202_top.jpg`, `images/amass_mr30_pair.jpg`, `images/xt30_fit0586_rear.jpg`, `images/swann39_side.jpg`, `images/rev_31_1387.png`). Treat the page and these files as the design: no run of the robot on battery power has happened yet.
+
+## Set points and checks
+
+Servo rail 7.0 V under load (XL4015 #1), 5.0 V on the A7Z pins (XL4015 #2); check both with a meter before the first power-up with boards connected, and again with `2-servos-openrb/scripts/check_voltage_limit.py`, which reads the supply voltage every servo sees. The runtime refuses to enable torque when the rail is outside 6.5 to 7.0 V on the bench setting (`--supply bench`) and watches the servos' hardware error flags once a second.

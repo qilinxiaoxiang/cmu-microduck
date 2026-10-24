@@ -1,0 +1,19 @@
+# Head camera (IMX708 wide) -> H.264 over TCP, port 8554, for mac/duck_cam.py; see pi/duck_cam.sh for the settings.
+# rpicam-vid --listen exits when its client disconnects, so Restart=always brings the listener back within RestartSec.
+# Stop:    sudo systemctl stop duck-cam.service        Disable on boot: sudo systemctl disable --now duck-cam.service
+# Enable:  sudo systemctl enable --now duck-cam.service Logs:           journalctl -u duck-cam.service -f
+# Nice=10 keeps it below the IMU stream (duck-imu.service) on the single Zero W core.
+[Unit]
+Description=MicroDuck head camera TCP stream
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/duck
+ExecStart=/bin/bash /home/pi/duck/duck_cam.sh
+Nice=10
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
